@@ -1,0 +1,9 @@
+.about-title{
+    line-height: 1.3 !important;
+}
+.hand-point{
+    cursor: pointer;
+}
+.hover\:text-accent-foreground:hover{
+    color: black !important;
+}
