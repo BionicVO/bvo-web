@@ -1,6 +1,6 @@
-import { useState } from "react";
+import {Profiler, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import logo from "@/assets/bionicvo-logo.png";
@@ -33,21 +33,30 @@ const Header = () => {
             <a href="#faq" className="text-foreground hover:text-primary transition-colors">
               FAQ
             </a>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="border-border hover:bg-accent/10"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
+              <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="border-border hover:bg-accent/10"
+              >
+                  {theme === "dark" ? (
+                      <Sun className="h-5 w-5" />
+                  ) : (
+                      <Moon className="h-5 w-5" />
+                  )}
+              </Button>
+              <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => navigate("/login")}
+                  className="border-border hover:bg-accent/10"
+              >
+                      <LogIn  className="h-5 w-5" />
+              </Button>
             <Button className="bg-primary hover:bg-primary/90 glow-effect" onClick={() => navigate("/signup")}>
               Get Started
             </Button>
+
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -64,6 +73,14 @@ const Header = () => {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
+              <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => navigate("/login")}
+                  className="border-border hover:bg-accent/10"
+              >
+                  <LogIn  className="h-5 w-5" />
+              </Button>
             <button
               className="text-foreground"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -104,7 +121,7 @@ const Header = () => {
             >
               FAQ
             </a>
-            <Button className="w-full bg-primary hover:bg-primary/90 glow-effect">
+            <Button className="w-full bg-primary hover:bg-primary/90 glow-effect" onClick={() => navigate("/signup")}>
               Get Started
             </Button>
           </div>

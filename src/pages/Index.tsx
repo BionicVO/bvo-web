@@ -6,6 +6,7 @@ import AppShowcase from "@/components/AppShowcase";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
+
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -16,6 +17,7 @@ const Index = () => {
         <AppShowcase />
         <FAQ />
         <Footer />
+
 
     </div>
   );
